@@ -15,6 +15,6 @@ var exitwl=document.getElementById("exitwl");
 exitwl.addEventListener("submit",(e)=>{
     e.preventDefault();
     window.close();
-    window.location="register.html";
+    window.location="index.html";
 
 })

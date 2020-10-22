@@ -29,3 +29,10 @@ $todoform.addEventListener('submit',(e)=>{
     e.preventDefault();
     window.location='welcomepage.html';
 });
+var exittodo=document.getElementById("exittodo");
+exittodo.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    window.close();
+    window.location="index.html";
+
+})

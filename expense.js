@@ -51,3 +51,10 @@ exitexp.addEventListener("submit",(e)=>{
     window.location="register.html";
 
 })
+var exitexp=document.getElementById("exitexp");
+exitexp.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    window.close();
+    window.location="index.html";
+
+})
