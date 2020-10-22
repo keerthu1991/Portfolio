@@ -1,7 +1,4 @@
 var expform=document.getElementById('expform');
-var homeform=document.getElementById('homeform');
-
-
 expform.addEventListener("submit",(e)=>{
         e.preventDefault();  
         if(window.localStorage){
@@ -29,6 +26,27 @@ expform.addEventListener("submit",(e)=>{
                                     var t=g+m+md+et+ms;
                                     var expense=s-t;
                                     alert("Your Expense is :" + ' ' + expense);
+                                    db.collection('expensedb').add({
+                                        salary:salary,
+                                        grocery:grocery,
+                                        maid:maid,
+                                        medical:medical,
+                                        entertainment:entertain,
+                                        miscellaneous:misc,
+                                        totalexpense:expense
+                                    })
+                                    .then(function(){
+                                        console.log('done');
+                                        expform.salary.value='';
+                                        expform.grocery.value='';
+                                        expform.maid.value='';
+                                        expform.medical.value='';
+                                        expform.entertain.value='';
+                                        expform.misc.value='';
+                                    })
+                                    .catch(function(error){
+                                        console.log('error');
+                                    })
                 }
                             else{
                                     alert("Values entered are incorrect, the expense cannot exceed the salary amount, please check and fill.")
@@ -40,17 +58,11 @@ expform.addEventListener("submit",(e)=>{
         }
 
 })
+var homeform=document.getElementById('homeform');
 homeform.addEventListener('submit',(e)=>{
     e.preventDefault();
     window.location='welcomepage.html';
 });
-var exitexp=document.getElementById("exitexp");
-exitexp.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    window.close();
-    window.location="register.html";
-
-})
 var exitexp=document.getElementById("exitexp");
 exitexp.addEventListener("submit",(e)=>{
     e.preventDefault();
