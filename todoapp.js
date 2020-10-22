@@ -41,8 +41,6 @@ todoform.addEventListener('submit',(e)=>{
     .catch(function(error){
         console.log('error');
     });
-    //localStorage.setItem("todotask",todo);
-    //var task=localStorage.getItem("todotask");
     }
     else{
         alert("Todo field cannot be left empty!");
