@@ -1,4 +1,4 @@
-var $todoList=document.getElementById("todoList");
+var todoList=document.getElementById("todoList");
 function rendertodos(doc){
     var li=document.createElement('li');
     var task=document.createElement('span');
@@ -10,7 +10,7 @@ function rendertodos(doc){
     li.classList.add('list-group-item');
     li.appendChild(task);
     li.appendChild(cross);
-    $todoList.appendChild(li);
+    todoList.appendChild(li);
     cross.addEventListener('click',(e)=>{
         e.stopPropagation();
         var id=e.target.parentElement.getAttribute('taskid');
@@ -22,25 +22,27 @@ db.collection('todolist').get().then((snapshot)=>{
         rendertodos(doc);
     })
 })
-var $todoform=document.getElementById("todoform");
-$todoform.addEventListener('submit',(e)=>{
+var todoform=document.getElementById("todoform");
+todoform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    var $addTodo=document.getElementById("addTodo").value;
+    var addTodo=document.getElementById("addTodo").value;
     if(window.localStorage){
-    if($addTodo!==''&&$addTodo!==null){
-    var todo=$addTodo;
+    if(addTodo!==''&&addTodo!==null){
+    var todo=addTodo;
+    localStorage.setItem("todotask",todo);
+    var task=localStorage.getItem("todotask");
     db.collection('todolist').add({
         todolistname:todo
     })
     .then(function(){
         console.log('done');
-        $todoform.$addTodo.value='';
+        todoform.addTodo.value='';
     })
     .catch(function(error){
         console.log('error');
     });
-    localStorage.setItem("todotask",todo);
-    var task=localStorage.getItem("todotask");
+    //localStorage.setItem("todotask",todo);
+    //var task=localStorage.getItem("todotask");
     }
     else{
         alert("Todo field cannot be left empty!");
@@ -57,7 +59,6 @@ exittodo.addEventListener("submit",(e)=>{
     e.preventDefault();
     window.close();
     window.location="index.html";
-
 })
 
 
