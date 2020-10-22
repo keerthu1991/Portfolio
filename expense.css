@@ -1,0 +1,9 @@
+body{
+    background: url("./sea.jpg");
+}
+.valid-feedback,.invalid-feedback{
+    visibility: hidden;
+}
+#homeform{
+    margin-bottom: 20px;
+}

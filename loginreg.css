@@ -1,0 +1,11 @@
+body{
+    background: url("./sea.jpg");
+}
+.panel{
+    padding: 10em 29em;
+}
+.form{
+    padding: 2em;
+    border-radius: 0.3em;
+    border: 1px solid lightblue;
+}

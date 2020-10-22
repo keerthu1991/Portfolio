@@ -1,0 +1,19 @@
+body{
+    background: url("./sea.jpg");
+}
+li{
+    list-style: none;
+    font-size: 30px;
+}
+.form-group{
+    font-size: 20px;
+    margin:20px;
+}
+input[type="checkbox"]{
+    zoom:2;
+}
+.completed{
+    text-decoration: line-through;
+    color: gray;
+    font-style: italic;
+}

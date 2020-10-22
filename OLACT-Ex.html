@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OLACallTaxi-Example</title>
+<style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    body{background-color: gold;}
+    </style>
+</head>
+<body>
+    <!--p>In OLACallTaxi, Passenger is provided with two options for payment<br>
+    1.Postpaid: Postpaid payment mode enforce payment of the ride taken by passenger within 7 days 
+    also notifies to recharge if the passenger has 0 balance or balance less than the ride fare.<br>
+2.CASH:Normal cash payment initiated by the passenger. </p>
+<p>Driver Role:<br>
+Initially drivers are notified with either payment is done or not , they are unaware of Postaid payment mode, this is why out of 10, 
+4 passengers pay thru cash by mistake or driver's plea even if postpaid mode is on and they are been followed by the admin for re-payment 
+of the fare thru postpaid mode since admin are unaware of the driver's request or update. Hence, in this module, I have come with a small alert message
+to showcase, what the payment is done. Driver has 1 or 2 options to select depending on customer payment mode<br>
+1.CASH(Pictorial representation is also incl):If selected this then "cash payment done" alert will get updated in passenger acc and admin 
+portal provided the passenger has postpaid mode activated and cash paid unknowingly. <br>
+AND
+2.Postpaid(Pictorial representation is also incl):If selected this then "postpaid payment done" will get updated in passenger acc and admin 
+portal provided the passenger has postpaid mode activated</p-->
+
+    <h1>OLACallTaxi Passenger Postpaid Payment Module-Example</h1>
+    <table><tr><th>Driver</th>
+    <th>Passenger</th>
+<th>Driver Operations</th>
+<th>Backend</th></tr>
+<tr><td>CASH</td>
+<td>POSTPAID ON BUT CASH PAID</td>
+<td><button type="submit" onclick="document.getElementById('cash').innerHTML = 'Cash paid for ride'">CASH</button>
+</td>
+<td id="cash">CASH PAYMENT DONE</td></tr>
+<tr><td>POSTPAID</td>
+<td>POSTPAID ON AND USED</td>
+<td>
+<button type="submit"onclick="document.getElementById('pp1').innerHTML = 'Ride fare to be deducted in 7 days'">POSTPAID</button></td>
+<td id="pp1">POSTPAID AMT TO BE DEDUCTED</td></tr>
+<tr><td>POSTPAID</td>
+    <td>POSTPAID ON AND NO AMT AVBL</td>
+    <td>
+    <button type="submit"onclick="document.getElementById('pp2').innerHTML = 'Kindly recharge your Postpaid acc and fare will deducted in 7 days'">POSTPAID</button></td>
+    <td id="pp2">RECHARGE POSTPAID ACC</td></tr></table>
+    </body>
+<script>
+    let num1=10;
+    let num2=20;{let num1=30;
+    console.log(num1+num2);}
+    console.log(num1+num2);
+    let b;
+    console.log(b);
+    let p=070;
+    console.log(p);
+    </script>
+

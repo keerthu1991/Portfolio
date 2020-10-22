@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>REGISTRATION PAGE</title>
+        <link rel="stylesheet" href="expense.css">
+    </head>
+    <body>
+        <div class="container">
+        <h2>Expense Calculator</h2>
+        <p>Enter the below fields and calculate your expense</p><br>
+        <form id="homeform" class="form" method="POST">
+            <input type="submit" class="btn btn-info" value="Home"/>
+        </form>
+        <div>
+        <form id="expform" class="form" method="POST">
+            <div class="form-group">
+            <label for="salary">Salary</label>
+            <input type="text" class="form-control" id="salary" required/>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+            <label for="grocery">Grocery</label>
+            <input type="text" class="form-control" id="grocery" required/>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+            <label for="maid">Maid</label>
+            <input type="text" class="form-control" id="maid" required/>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+            <label for="medical">Medical</label>
+            <input type="text" class="form-control" id="medical" required/>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+            <label for="entertain">Entertainment</label>
+            <input type="text" class="form-control" id="entertain" required/>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+            <label for="misc">Miscellanous</label>
+            <input type="text" class="form-control" id="misc" required/>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <input type="submit" class="btn btn-info" value="Calculate"/>
+        </form>
+        <p class="text-danger">* - Denotes Mandatory fields</p>
+        <form id="exitexp" class="form" method="POST">
+            <input type="submit" class="btn btn-info" value="Logout"/>
+        </form>
+        </div>
+        </div>
+    </body>
+    <script src="expense.js"></script>
+</html>
