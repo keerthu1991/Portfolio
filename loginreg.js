@@ -1,36 +1,54 @@
-let txtuser=document.querySelector(".txtuser");
-let txtpass=document.querySelector(".txtpass");
-let submit=document.querySelector(".submit");
+var txtuser=document.querySelector(".txtuser");
+var txtpass=document.querySelector(".txtpass");
 
-function validateUser(doc){
-if(window.localStorage){
-   // var id=setAttribute('data-id',doc.id);
-    var username=doc.data().username;
-    var password=doc.data().password;
-    console.log(username);
-    console.log(password);
-    localStorage.setItem("user",username);
-    localStorage.setItem("pass",password);
-    let user=localStorage.getItem("user");
-    let pass=localStorage.getItem("pass");
-    let message=document.querySelector(".message");
-    submit.addEventListener("click",(e)=>{
-        e.preventDefault();
-        if(txtuser.value===username&&txtpass.value===password){
-            //console.log(txtuser.value);
-            //console.log(txtpass.value);
-            message.innerHTML="Login Successful!";
-            //console.log(password);
-            window.location='welcomepage.html';
-        }else{
-            message.innerHTML="Username or Password is Invalid!";
-        }
-    })
-}
+var submit=document.querySelector(".submit"); 
+function renderlogin(doc){
+
+       var username=doc.data().username;
+       var password=doc.data().password;
+
+       console.log(username);
+       console.log(password);
+  
+
 }
 db.collection('loginusers').get().then((snapshot)=>{
-    //console.log(snapshot.docs);
     snapshot.docs.forEach((doc)=>{
-        validateUser(doc);
+        renderlogin(doc);
     })
+})
+submit.addEventListener("click",(e)=>{
+    e.preventDefault();
+   
+    if(window.localStorage){
+        if(txtuser.value!==''&&txtuser.value!==null&&txtpass.value!==''&&txtpass.value!==null){
+        db.collection('loginusers').where('username','==',txtuser.value).get().then((snapshot)=>{
+            snapshot.docs.forEach((doc)=>{
+                renderlogin(doc);
+                var pwd=doc.data().password;
+                var uname=doc.data().username;
+                //console.log(uname);
+                //console.log(pwd);
+    localStorage.setItem("user",txtuser);
+    var user=localStorage.getItem("user");
+    if(txtuser.value==uname&&txtpass.value==pwd){
+    alert('Welcome!!!');
+    window.localStorage.setItem('user',user); 
+    window.location='welcomepage.html';
+    }
+    else{
+        alert('Username or Password is Invalid! Kindly Try again!');
+    }
+    })
+
+    
+    })
+    .catch(function(error){
+        alert('username or password is invalid');
+    });
+}
+    else{
+        alert('Fields cannot be empty! KIndly Fill!');
+    }
+}
 })

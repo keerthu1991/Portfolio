@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="register.css">
+        <title>MY PROFILE</title>
+    </head>
+    <body>
+        <div class="container">
+            <form id="home">
+                <div class="form-group">
+                <input class="btn btn-primary btn-sm" type="submit" value="Home"/>
+                </div>
+            </form>
+        <h2>MY PROFILE</h2>
+        <p>You can view your profile here but you can <strong>ONLY</strong> update following data 
+            <ul class="list-group">
+            <li class="list-group-item list-group-item-primary"><strong>EMAIL ID</strong></li>
+            <li class="list-group-item list-group-item-primary"><strong>ADDRESS</strong></li>
+            <li class="list-group-item list-group-item-primary"><strong>PHONE NO</strong></li>
+            <li class="list-group-item list-group-item-primary"><strong>PASSWORD</strong></li>
+            </ul>
+        </p>
+        <form id="mydata" class="form" method="POST">
+            <div class="form-group">
+            <table id="mytable" class="table table-bordered">
+                <tr>
+                    <th>Username</th>
+                    <th>Email ID</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>Password</th>
+                </tr>
+            </table>
+            </div>
+            
+            
+        </form>
+        <form id="updatebtn" class="form" method="POST">
+            <div class="form-group"><input type="submit" class="btn btn-primary btn-sm" value="Update"/></div>
+        </form>
+        </div>
+    </body>
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyB9dnen5pZA4hAArFdF8m2BSpX3upZ0c10",
+          authDomain: "keerthana-app.firebaseapp.com",
+          databaseURL: "https://keerthana-app.firebaseio.com",
+          projectId: "keerthana-app",
+          storageBucket: "keerthana-app.appspot.com",
+          messagingSenderId: "1020951731144",
+          appId: "1:1020951731144:web:6f8cdc59828d5ff432befd",
+          measurementId: "G-F06EYMGEPQ"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db=firebase.firestore();
+      // db.settings({timestampsInSnapshots:true});
+      </script>
+    <script src="mydata.js"></script>
+</html>

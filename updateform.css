@@ -1,0 +1,9 @@
+body{
+    background: url("./sea.jpg");
+}
+.valid-feedback,.invalid-feedback{
+    visibility: hidden;
+}
+#updform{
+    margin-bottom: 20px;
+}
