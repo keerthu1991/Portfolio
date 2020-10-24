@@ -2,7 +2,7 @@
 //console.log(username);
 //var user=window.localStorage.getItem('user');
 //console.log(user);
-var regpage=document.referrer;
+/*var regpage=document.referrer;
 console.log(regpage);
 var loginpage=document.referrer;
 console.log(loginpage);
@@ -39,15 +39,16 @@ function welcome(doc){
     document.body.appendChild(script);
 }
 
+
+var mydata=document.getElementById("mydata");
+mydata.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    window.location="mydata.html";
+})*/
 var exitwl=document.getElementById("exitwl");
 exitwl.addEventListener("submit",(e)=>{
     e.preventDefault();
     window.close();
     window.location="index.html";
 
-})
-var mydata=document.getElementById("mydata");
-mydata.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    window.location="mydata.html";
 })
