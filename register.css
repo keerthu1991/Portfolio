@@ -4,3 +4,25 @@ body{
 .valid-feedback,.invalid-feedback{
     visibility: hidden;
 }
+a{
+    text-decoration: underline;
+}
+/* unvisited link */
+a:link {
+    color:black;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: black;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: blue;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }

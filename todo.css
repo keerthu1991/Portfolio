@@ -12,3 +12,6 @@ body{
 #todo{
     margin-top:20px;
 }
+#exittodo{
+    float:right;
+}
